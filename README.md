@@ -8,63 +8,88 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Certainly! Here's a suggested documentation for your React component, which you can include in your README file:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+# ReusableTable Component Documentation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The `ReusableTable` component is a versatile and customizable table component built with React and Material-UI. It provides essential functionalities such as sorting, searching, filtering, and pagination, making it suitable for a wide range of data display scenarios.
 
-### `npm run build`
+## Table of Contents
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Props](#props)
+- [Examples](#examples)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To use the `ReusableTable` component in your React project, follow these steps:
 
-### `npm run eject`
+1. Install the necessary dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   npm install @material-ui/core @mui/material
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Copy and paste the `ReusableTable.js` file into your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Import the component into your desired file:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```javascript
+   import ReusableTable from './path/to/ReusableTable';
+   ```
 
-## Learn More
+## Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To use the `ReusableTable` component, simply include it in your React application and pass the required data and configuration as props.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```javascript
+import React from 'react';
+import ReusableTable from './path/to/ReusableTable';
 
-### Code Splitting
+const YourComponent = () => {
+  // Define your data and columns
+  const data = [...]; // Your data array
+  const columns = [...]; // Your columns configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  return <ReusableTable data={data} columns={columns} />;
+};
 
-### Analyzing the Bundle Size
+export default YourComponent;
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Props
 
-### Making a Progressive Web App
+The `ReusableTable` component accepts the following props:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- `data` (Array): An array of objects representing the data to be displayed in the table.
 
-### Advanced Configuration
+- `columns` (Array): An array of objects specifying the configuration for each table column.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- `rowsPerPageOptions` (Array): An optional array specifying the available options for rows per page in the pagination control. Default is `[5, 10, 25]`.
 
-### Deployment
+## Examples
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Sorting
 
-### `npm run build` fails to minify
+The table supports column sorting. Click on a column header to toggle between ascending and descending order.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Searching
+
+Utilize the search bar to filter the displayed data based on a case-insensitive search query.
+
+### Filtering
+
+Click the filter icon to reveal a menu allowing the user to toggle the visibility of specific columns.
+
+### Pagination
+
+Navigate through the data using the pagination control at the bottom of the table. Choose the number of rows to display per page.
+
+Feel free to customize and adapt the component to suit your specific requirements.
+
+---
+
+Feel free to modify this documentation based on any additional features or customization you might have in your `ReusableTable` component.
